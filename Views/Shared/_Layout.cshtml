@@ -10,12 +10,15 @@
 </head>
 <body>
     <header>
-        <nav>
-            <ul>
-                <li>
-                    <a asp-area="" asp-controller="Home" asp-action="Privacy">Manga</a>
-                </li>
+        <nav class="navbar">
+            <ul class="nav-list">
+                <li><a href="#">Manga</a></li>
+                <li><a href="#">Anime</a></li>
+                <li><a href="#">Jogos</a></li>
             </ul>
+            <div class="search-container">
+                <input type="text" placeholder="Pesquisar títulos...">
+            </div>
         </nav>
     </header>
     <div>

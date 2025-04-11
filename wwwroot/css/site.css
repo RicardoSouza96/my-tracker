@@ -1,0 +1,28 @@
+.navbar {
+  display: flex;
+  position: sticky;
+  top: 0px;
+  background: rgb(255 127 39);
+  background-blend-mode: darken;
+  background-size: cover;
+  color: white;
+  padding: 10px 20px;
+  justify-content: space-between;
+}
+  
+.nav-list {
+  list-style: none;
+   padding: 0;
+   margin: 10px 0;
+}
+
+nav li {
+  display: inline;
+  margin-right: 20px;
+}
+
+.search-container {
+  margin-top: 15px;
+  width: 80%; /* Largura da barra de pesquisa */
+  max-width: 600px; /* Largura máxima da barra de pesquisa */
+}
