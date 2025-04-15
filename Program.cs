@@ -1,4 +1,11 @@
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using my_tracker.Models;
+using my_tracker.Data;
+
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddDbContext<ApplicationDbContext>(options =>
+    options.UseSqlite(builder.Configuration.GetConnectionString("MyTrackerContext")));
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
@@ -22,8 +29,7 @@ app.MapStaticAssets();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}")
+    pattern: "{controller=Manga}/{action=Index}/{id?}")
     .WithStaticAssets();
-
 
 app.Run();
