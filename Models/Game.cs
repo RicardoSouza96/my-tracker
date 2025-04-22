@@ -1,5 +1,4 @@
 using System.ComponentModel.DataAnnotations;
-using Microsoft.VisualBasic;
 
 namespace my_tracker.Models;
 
@@ -10,4 +9,6 @@ public class Game
     public string Title { get; set;} = string.Empty;
     [Required]
     public string Platform { get; set;} = string.Empty;
+    public string Status { get; set; } = string.Empty;
+    public DateOnly LaunchDate { get; set; }
 }
