@@ -1,3 +1,35 @@
-@{
-    ViewData["Title"] = "Manga";
-}
+@using my_tracker.Models
+@model List<Manga>
+
+<table>
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Description</th>
+            <th>Start Date</th>
+            <th>End Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var entry in Model)
+        {
+            <tr>
+                <td>@entry.Title</td>
+                <td>@entry.Author</td>
+                <td>@entry.Status</td>
+                <td>@entry.StartDate</td>
+                <td>@entry.EndDate</td>
+                <td>
+                    <a asp-controller="Manga" asp-action="Edit" asp-route-id="@entry.Id">Edit</a>
+                </td>
+                <td>
+                    <form asp-controller="Manga" asp-action="Delete" method="post" onsubmit="return confirm('Tem certeza que deseja remover este registro?');">
+                        <input type="hidden" name="id" value="@entry.Id" /> <!-- Passa o ID como campo oculto -->
+                        <button type="submit">Delete</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
